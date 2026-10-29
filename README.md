@@ -12,6 +12,10 @@
 
 > GitHub 自动生成的 “Source code” 压缩包只包含源码，不是可直接运行的软件。
 
+## 界面预览
+
+![BiliAudio 软件界面](screenshot.png)
+
 ## 系统要求
 
 - Windows 10 / Windows 11，64 位
