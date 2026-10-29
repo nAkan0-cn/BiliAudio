@@ -1,8 +1,16 @@
 yt-dlp 2026.10.26: https://github.com/yt-dlp/yt-dlp/tree/2026.10.26
 FFmpeg 7.1 essentials build: https://www.gyan.dev/ffmpeg/builds/
-FFmpeg upstream source: https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz
-FFmpeg Windows build scripts and external library sources: https://github.com/GyanD/codexffmpeg
+FFmpeg distributor's 7.1 release: https://github.com/GyanD/codexffmpeg/releases/tag/7.1
+FFmpeg source revision identified by that release: https://github.com/FFmpeg/FFmpeg/commit/b08d7969c5
+FFmpeg upstream source candidate: https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz
+Distributor repository (NOT verified as a complete build/source archive): https://github.com/GyanD/codexffmpeg
 Bundled FFmpeg binary is from imageio-ffmpeg 0.7.0 wheel:
 https://pypi.org/project/imageio-ffmpeg/0.7.0/
 https://github.com/imageio/imageio-ffmpeg
 The FFmpeg executable is a separate process; its version and build flags are in FFmpeg.txt.
+
+IMPORTANT: The links above do not constitute a verified complete Corresponding
+Source package for the bundled static executable. See FFmpeg-AUDIT.md for
+verified binary identity, evidence, unresolved dependencies and release checks.
+The upstream FFmpeg source alone does not include all linked external libraries.
+PolyForm Noncommercial applies to BiliAudio's original code, not to FFmpeg.
