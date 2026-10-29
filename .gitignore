@@ -1,0 +1,38 @@
+# Python 缓存
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Python 虚拟环境
+.venv/
+venv/
+env/
+
+# 本地配置和敏感文件
+.env
+.env.*
+!.env.example
+cookies.txt
+cookies*.txt
+*cookie*.txt
+
+# 打包生成的文件
+build/
+dist/
+build-assets/
+*.spec
+*.exe
+*.zip
+
+# 日志和临时下载
+*.log
+*.part
+*.ytdl
+*.converting.mp3
+
+# 编辑器和系统文件
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
