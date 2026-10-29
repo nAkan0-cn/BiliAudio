@@ -30,7 +30,8 @@ MP3：转换为高质量可变码率 MP3，同时保留原始音频。
 
 系统与源码
 适用于 Windows 10/11 64位，需要联网下载。
-BiliAudio-source 包含 Python 源码及打包脚本。
+GitHub 仓库：app.py、requirements.txt 和 build.ps1 位于仓库根目录。
+完整发行版压缩包：源码及打包脚本位于 BiliAudio-source 文件夹。
 开发时安装 Python 3.11+，执行 build.ps1；产物在 dist\BiliAudio-v1.0.exe。
 
 第三方组件
