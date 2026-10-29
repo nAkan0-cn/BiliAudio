@@ -117,3 +117,18 @@ dist/BiliAudio-v1.0.exe
 ## 使用范围
 
 仅下载你拥有版权或得到授权保存的内容。软件不绕过付费、会员或其他访问权限限制。
+
+## 许可证
+
+BiliAudio 的项目原创代码采用
+[PolyForm Noncommercial License 1.0.0](LICENSE)。
+
+本项目源码公开，可按照许可证条款进行非商业使用、修改和分发。
+具体许可范围及例外以 LICENSE 原文为准。
+
+分发时请保留许可证文本或官方链接，以及
+[NOTICE](NOTICE) 中的 Required Notice 声明。
+
+yt-dlp、FFmpeg 等第三方组件分别适用各自的许可证，
+本项目许可证不替代或限制第三方组件的授权。
+相关材料见 [THIRD-PARTY-LICENSES](THIRD-PARTY-LICENSES/)。
