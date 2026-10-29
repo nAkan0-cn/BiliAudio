@@ -1,0 +1,8 @@
+yt-dlp 2026.10.26: https://github.com/yt-dlp/yt-dlp/tree/2026.10.26
+FFmpeg 7.1 essentials build: https://www.gyan.dev/ffmpeg/builds/
+FFmpeg upstream source: https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz
+FFmpeg Windows build scripts and external library sources: https://github.com/GyanD/codexffmpeg
+Bundled FFmpeg binary is from imageio-ffmpeg 0.7.0 wheel:
+https://pypi.org/project/imageio-ffmpeg/0.7.0/
+https://github.com/imageio/imageio-ffmpeg
+The FFmpeg executable is a separate process; its version and build flags are in FFmpeg.txt.
