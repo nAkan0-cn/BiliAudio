@@ -1,7 +1,7 @@
-BiliAudio — B站音频下载器 1.0
+BiliAudio — B站音频下载器 1.1
 
 使用方法
-1. 双击 BiliAudio-v1.0.exe，无需安装 Python 或 FFmpeg。
+1. 双击 BiliAudio-v1.1.exe，无需安装 Python 或 FFmpeg。
 2. 粘贴普通 B站视频链接、BV号，或含 b23.tv 链接的分享文字。
 3. 选择保存文件夹。默认：当前用户的 Music\BiliAudio。
 4. 选择“原始音频”或“MP3”，点击“开始下载”。
@@ -9,7 +9,9 @@ BiliAudio — B站音频下载器 1.0
 
 格式与分P
 原始音频：下载网站提供的独立音轨，通常为 M4A，不再次压缩。
-MP3：转换为高质量可变码率 MP3，同时保留原始音频。
+MP3：转换为高质量可变码率 MP3，转换成功后只保留 MP3；转换失败时保留原始音频。
+已有同名 MP3 会先验证能否解码，再移除对应原始音频；若 MP3 无效，则保留原始音频并提示错误。
+软件不会扫描清理以前下载的原始音频；重新下载对应投稿时才处理相应文件。
 默认只下载链接指定的分P；未指定时下载第一P。
 勾选“下载全部分P”后，下载同一投稿内全部分P，不扩展到UP主的其他视频。
 同名文件不覆盖。取消后可能留下 .part 或 .converting.mp3 文件，重试可续传或重新转换。
@@ -32,7 +34,7 @@ MP3：转换为高质量可变码率 MP3，同时保留原始音频。
 适用于 Windows 10/11 64位，需要联网下载。
 GitHub 仓库：app.py、requirements.txt 和 build.ps1 位于仓库根目录。
 完整发行版压缩包：源码及打包脚本位于 BiliAudio-source 文件夹。
-开发时安装 Python 3.11+，执行 build.ps1；产物在 dist\BiliAudio-v1.0.exe。
+开发时安装 Python 3.11+，执行 build.ps1；产物在 dist\BiliAudio-v1.1.exe。
 
 第三方组件
 yt-dlp：https://github.com/yt-dlp/yt-dlp （Unlicense；部分打包依赖有各自许可证）

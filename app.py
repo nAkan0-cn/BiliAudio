@@ -51,7 +51,16 @@ def ffmpeg_path():
 def convert_mp3(source):
     source = Path(source)
     target = source.with_suffix('.mp3')
-    if source == target or target.exists():
+    if source == target:
+        return str(target)
+    if target.exists():
+        # Do not discard the source just because an older MP3 has this name.
+        check = subprocess.run([ffmpeg_path(), '-nostdin', '-v', 'error', '-xerror',
+                                '-i', str(target), '-map', '0:a:0', '-f', 'null', '-'],
+                               capture_output=True, creationflags=CREATE_NO_WINDOW)
+        if check.returncode or target.stat().st_size == 0:
+            raise RuntimeError('同名 MP3 无效，已保留原始音频。请移走该 MP3 后重试：' + str(target))
+        source.unlink(missing_ok=True)
         return str(target)
     partial = target.with_name(target.stem + '.converting.mp3')
     try:
@@ -61,7 +70,10 @@ def convert_mp3(source):
                                 creationflags=CREATE_NO_WINDOW)
         if result.returncode:
             raise RuntimeError('MP3 转换失败：' + result.stderr.decode('utf-8', 'replace')[-1200:])
+        if not partial.is_file() or partial.stat().st_size == 0:
+            raise RuntimeError('MP3 转换未生成有效文件，已保留原始音频。')
         os.replace(partial, target)
+        source.unlink()
         return str(target)
     finally:
         partial.unlink(missing_ok=True)
@@ -183,7 +195,7 @@ class App:
         self.format_box.pack(side='left', padx=10)
         self.parts_check = ttk.Checkbutton(line, text='下载全部分P', variable=self.all_parts)
         self.parts_check.pack(side='left', padx=10)
-        ttk.Label(body, text='原始音频不再次压缩；MP3 模式同时保留原始音频。', foreground='#64748b').pack(anchor='w', pady=(0, 10))
+        ttk.Label(body, text='MP3 模式转换成功后仅保留 MP3；转换失败时保留原始音频。', foreground='#64748b').pack(anchor='w', pady=(0, 10))
         line = ttk.Frame(body)
         line.pack(fill='x')
         self.cookie_button = ttk.Button(line, text='导入 Cookies（可选）', command=self.pick_cookies)
